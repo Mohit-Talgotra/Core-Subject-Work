@@ -18,7 +18,6 @@ def correct_hamming(hamming_code):
     if error_pos != 0:
         h[error_pos - 1] ^= 1
 
-    # Remove parity bits
     corrected = []
     for i in range(len(h)):
         if (i + 1) & i:

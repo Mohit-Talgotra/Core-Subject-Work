@@ -1,6 +1,6 @@
 def check_parity(received_message):
     count = received_message.count('1')
-    return count % 2 == 0  # Even parity
+    return count % 2 == 0
 
 with open("File1.txt", "r") as f:
     lines = f.readlines()

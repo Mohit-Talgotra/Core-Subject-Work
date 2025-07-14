@@ -14,7 +14,6 @@ original_payload = ''.join(random.choice('01') for _ in range(25))
 parity_bit = generate_parity_bit(original_payload)
 message_sent = original_payload + parity_bit
 
-# Simulate corruption with 1/1000 chance per bit
 message_received = message_sent
 if random.random() < len(message_sent) / 1000:
     message_received = flip_random_bit(message_sent)
