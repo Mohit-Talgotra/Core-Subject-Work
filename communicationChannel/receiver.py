@@ -31,7 +31,7 @@ def binary_to_string(binary_str):
     return ''.join(ascii_characters)
 
 
-with open("message.txt", "r") as f:
+with open("communicationChannel/message.txt", "r") as f:
     message_received = f.read().strip()
 
 corrected_message, was_error = correct_hamming(message_received)

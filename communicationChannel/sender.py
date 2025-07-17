@@ -31,7 +31,7 @@ def string_to_binary(input_string):
 original_payload = string_to_binary(input("Enter a message: "))
 hamming_code = insert_parity_bits(original_payload)
 
-with open("message.txt", "w") as f:
+with open("communicationChannel/message.txt", "w") as f:
     f.write(hamming_code)
 
 print("Sender: Message sent and written to file.")
