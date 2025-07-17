@@ -1,4 +1,0 @@
-Original 25 bits payload: 0100000000110000101111101
-Extra bit(s) for detecting errors: 0
-Message sent: 01000000001100001011111010
-Message received: 01000000001100001011111010

@@ -25,18 +25,17 @@ def correct_hamming(hamming_code):
     corrected.reverse()
     return ''.join(map(str, corrected)), error_pos != 0
 
-with open("File3.txt", "r") as f:
-    lines = f.readlines()
-    original_message = lines[2].split(": ")[1].strip()
-    message_received = lines[3].split(": ")[1].strip()
+def binary_to_string(binary_str):
+    byte_chunks = [binary_str[i:i + 8] for i in range(0, len(binary_str), 8)]    
+    ascii_characters = [chr(int(bv, 2)) for bv in byte_chunks]
+    return ''.join(ascii_characters)
+
+
+with open("message.txt", "r") as f:
+    message_received = f.read().strip()
 
 corrected_message, was_error = correct_hamming(message_received)
-is_corrupted = 'Yes' if was_error else 'No'
-is_match = 'Yes' if corrected_message == original_message[:25] else 'No'
 
-with open("File4.txt", "w") as f:
-    f.write(f"Message received: {message_received}\n")
-    f.write(f"Is message corrupted: {is_corrupted}\n")
-    f.write(f"Rectified Message: {corrected_message}\n")
-    f.write(f"Original Message: {original_message}\n")
-    f.write(f"Is there a match between rectified message and original message? {is_match}\n")
+print(f"Receiver: Received Hamming Code: {message_received}")
+print(f"Receiver: Corrected Message: {binary_to_string(corrected_message)}")
+print(f"Receiver: Was there an error? {'Yes' if was_error else 'No'}")
