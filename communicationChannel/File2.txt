@@ -1,0 +1,2 @@
+Message received: 11011001010101101010101011
+Is message corrupted: Yes

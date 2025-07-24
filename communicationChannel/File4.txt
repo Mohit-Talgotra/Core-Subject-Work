@@ -1,0 +1,5 @@
+Message received: 11011001010101101010101011
+Is message corrupted: Yes
+Rectified Message: 1101100101010110101010101
+Original Message: 1101100101010110101010101
+Is there a match between rectified message and original message? Yes
