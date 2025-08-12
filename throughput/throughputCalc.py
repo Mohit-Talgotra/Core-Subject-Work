@@ -34,7 +34,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-N_values_fixed = [50, 100, 200]
+N_values_fixed = list(range(50, 300, 30))
 k_values = list(range(1, 11))
 plt.figure(figsize=(10,6))
 
