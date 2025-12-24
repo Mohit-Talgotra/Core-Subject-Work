@@ -53,7 +53,8 @@ extern int yydebug;
     YYEMPTY = -2,
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
-    YYUNDEF = 257                  /* "invalid token"  */
+    YYUNDEF = 257,                 /* "invalid token"  */
+    NUM = 258                      /* NUM  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -62,10 +63,20 @@ extern int yydebug;
 #define YYEOF 0
 #define YYerror 256
 #define YYUNDEF 257
+#define NUM 258
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+union YYSTYPE
+{
+#line 11 "armstrong.y"
+
+    char *str;
+
+#line 77 "y.tab.h"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
